@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* - - - - Vars - - - - */
+
+
+/* - - ColorGraphy - - */
+
+
+/* - Strengh Checkbox Colors - */
+
+$red: hsl(0,
+50%,
+50%);
+$orange: rgb(191,
+136,
+64);
+$yellow: rgb(191,
+183,
+64);
+$green: rgb(64,
+191,
+85);
+
+/* - Blacks - */
+
+$Black-100: hsl(0,
+0%,
+0%);
+$Black-95: hsl(0,
+0%,
+5%);
+$Black-90: hsl(0,
+0%,
+10%);
+$Black-85: hsl(0,
+0%,
+15%);
+$Black-80: hsl(0,
+0%,
+20%);
+$Black-75: hsl(0,
+0%,
+25%);
+$Black-70: hsl(0,
+0%,
+30%);
+
+/* - Greys - */
+
+$Grey-100: hsl(0,
+0%,
+50%);
+$Grantie-Grey: #24232B;
+
+/* - Whites - */
+
+$White-100: hsl(0,
+0%,
+100%);
+$White-95: hsl(0,
+0%,
+95%);
+$White-90: hsl(0,
+0%,
+90%);
+$White-85: hsl(0,
+0%,
+85%);
+$White-80: hsl(0,
+0%,
+80%);
+$White-75: hsl(0,
+0%,
+75%);
+$White-70: hsl(0,
+0%,
+70%);
+
+/* - Main Colors - */
+
+$Eerie-Black: #18171F;
+$Mint-Green: #A4FFAF;
+$Chinese-Black: #100F15;
+
+/* - - - - - - - - - - - - - - - */
+
+
+/* - - Typography - - */
+
+
+/* - Fonts - */
+
+$Font-Family: 'Exo 2';
+
+/* - Letter Space - */
+
+$L-Space-1: 1px;
+$L-Space-2: 2px;
+$L-Space-3: 3px;
+$L-Space-4: 4px;
+$L-Space-5: 5px;
+
+/* - Weight - */
+
+$Weight-1: 100;
+$Weight-2: 200;
+$Weight-3: 300;
+$Weight-4: 400;
+$Weight-5: 500;
+$Weight-6: 600;
+$Weight-7: 700;
+
+/* - Height - */
+
+$Height-1: 8px;
+$Height-2: 16px;
+$Height-3: 24px;
+$Height-4: 32px;
+$Height-5: 40px;
+$Height-6: 48px;
+$Height-7: 56px;
+$Height-8: 64px;
+$Height-9: 72px;
+$Height-1: 80px;
+
+/* - Word Space - */
+
+$W-Space-1: 1px;
+$W-Space-2: 2px;
+$W-Space-3: 3px;
+$W-Space-4: 4px;
+$W-Space-5: 5px;
+
+/* - - - - - - - - - - - - - - - */
+
+
+/* - - Spacing - - */
+
+
+/* - Margins and Paddings - */
+
+
+/* Values are based on 8 point system */
+
+$s-1: 8px;
+$s-2: 16px;
+$s-3: 24px;
+$s-4: 32px;
+$s-5: 40px;
+$s-6: 48px;
+$s-7: 56px;
+$s-8: 64px;
+$s-9: 72px;
+$s-10: 80px;
+$s-11: 88px;
+$s-12: 96px;
+
+/* - - Mixins -  - */
+
+@mixin WH($width,
+$height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin Square($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin Max-WH($width,
+$height) {
+    max-width: $width;
+    max-height: $height;
+}
+
+@mixin Flex($justify: center,
+$align: center,
+$direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin Grid($column,
+$rows) {
+    display: grid;
+    grid-template-columns: $column;
+    grid-template-rows: $rows;
+}
+
+@mixin Padding-Vertical($padding) {
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
+
+@mixin Padding-Horizontal($padding) {
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+@mixin Margin-Vertical($margin) {
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+
+@mixin Margin-Horizontal($margin) {
+    margin-left: $margin;
+    margin-right: $margin;
+}
+
+@mixin Position-Abs-4($top: 0,
+$left: 0,
+$bottom: 0,
+$right: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin Position-top-left($top: 0,
+$left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin Position-bottom-right($bottom: 0,
+$right: 0) {
+    position: absolute;
+    right: $right;
+    bottom: $bottom;
+}
+
+@mixin padding-h($padding) {
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+@mixin padding-v($padding) {
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
+
+@mixin margin-h($margin) {
+    margin-left: $margin;
+    margin-right: $margin;
+}
+
+@mixin margin-v($margin) {
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+
+
+/* - - placeholders -  - */
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%position-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
+
+
+/* - Padding for all directions - */
+
+%padding-1 {
+    padding: $s-1;
+}
+
+%padding-2 {
+    padding: $s-2;
+}
+
+%padding-3 {
+    padding: $s-3;
+}
+
+%padding-4 {
+    padding: $s-4;
+}
+
+%padding-5 {
+    padding: $s-5;
+}
+
+
+/* - Padding Vertical - */
+
+%padding-v-1 {
+    @include Padding-Vertical($s-1);
+}
+
+%padding-v-2 {
+    @include Padding-Vertical($s-2);
+}
+
+%padding-v-3 {
+    @include Padding-Vertical($s-3);
+}
+
+%padding-v-4 {
+    @include Padding-Vertical($s-4);
+}
+
+%padding-v-5 {
+    @include Padding-Vertical($s-5);
+}
+
+%padding-v-6 {
+    @include Padding-Vertical($s-6);
+}
+
+%padding-v-7 {
+    @include Padding-Vertical($s-7);
+}
+
+
+/* - Padding Horizontal - */
+
+%padding-h-1 {
+    @include Padding-Horizontal($s-1);
+}
+
+%padding-h-2 {
+    @include Padding-Horizontal($s-2);
+}
+
+%padding-h-3 {
+    @include Padding-Horizontal($s-3);
+}
+
+%padding-h-4 {
+    @include Padding-Horizontal($s-4);
+}
+
+%padding-h-5 {
+    @include Padding-Horizontal($s-5);
+}
+
+%padding-h-6 {
+    @include Padding-Horizontal($s-6);
+}
+
+%padding-h-7 {
+    @include Padding-Horizontal($s-7);
+}
+
+%padding-h-8 {
+    @include Padding-Horizontal($s-8);
+}
+
+
+/* - Margin for all directions - */
+
+%margin-1 {
+    margin: $s-1;
+}
+
+%margin-1 {
+    margin: $s-2;
+}
+
+%margin-1 {
+    margin: $s-3;
+}
+
+%margin-1 {
+    margin: $s-4;
+}
+
+%margin-1 {
+    margin: $s-5;
+}
+
+
+/* - Margin Vertical - */
+
+%margin-v-1 {
+    @include Margin-Vertical($s-1);
+}
+
+%margin-v-2 {
+    @include Margin-Vertical($s-2);
+}
+
+%margin-v-3 {
+    @include Margin-Vertical($s-3);
+}
+
+%margin-v-4 {
+    @include Margin-Vertical($s-4);
+}
+
+%margin-v-5 {
+    @include Margin-Vertical($s-5);
+}
+
+%margin-v-6 {
+    @include Margin-Vertical($s-6);
+}
+
+%margin-v-7 {
+    @include Margin-Vertical($s-7);
+}
+
+
+/* - Margin Horizontal - */
+
+%margin-h-1 {
+    @include Margin-Horizontal($s-1);
+}
+
+%margin-h-2 {
+    @include Margin-Horizontal($s-2);
+}
+
+%margin-h-3 {
+    @include Margin-Horizontal($s-3);
+}
+
+%margin-h-4 {
+    @include Margin-Horizontal($s-4);
+}
+
+%margin-h-5 {
+    @include Margin-Horizontal($s-5);
+}
+
+%margin-h-6 {
+    @include Margin-Horizontal($s-6);
+}
+
+%margin-h-7 {
+    @include Margin-Horizontal($s-7);
+}
+
+%margin-h-8 {
+    @include Margin-Horizontal($s-8);
+}
+
+
+/* - Margin Auto Horizontal - */
+
+%margin-a-h {
+    margin-left: auto;
+    margin-right: auto;
+}

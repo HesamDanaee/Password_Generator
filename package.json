@@ -1,0 +1,15 @@
+{
+    "dependencies": {
+        "typescript": "^4.8.3"
+    },
+    "name": "password-generator-app",
+    "description": "> Your users should be able to:",
+    "version": "1.0.0",
+    "main": "index.js",
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Hesam",
+    "license": "ISC"
+}

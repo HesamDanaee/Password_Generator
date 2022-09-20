@@ -1,0 +1,378 @@
+@use 'partials/mixin&vars' as *;
+
+/* - - Global Styles - - */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: $Font-Family;
+}
+
+body {
+    @include WH(100vw, 100vh);
+    @extend %flex-center;
+    background: $Chinese-Black;
+    position: relative;
+}
+
+input[type=checkbox] {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+
+/* - - Main Styles - - */
+
+.container {
+    @include WH(clamp(375px, 100%, 550px), auto);
+    // @include Max-WH(550px, auto);
+    @include Flex(space-evenly, center, column);
+    @extend %padding-5;
+}
+
+
+/* - Copy Section - */
+
+.copy-sec {
+    @include WH((clamp(95%, 100%, 100%)), auto);
+    @include Flex(space-between, center, row);
+    @extend %padding-v-3;
+    @extend %padding-h-5;
+    @extend %margin-v-2;
+    background-color: $Grantie-Grey;
+    position: relative;
+    &__password {
+        font-weight: $Weight-4;
+        letter-spacing: $L-Space-3;
+        color: $White-85;
+    }
+    &__icon {
+        @include WH(35px, 35px);
+        font-size: 1.5rem;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    // &::after {
+    //     content: 'Copy';
+    //     @extend %flex-center;
+    //     @include Position-bottom-right(40%, -6%);
+    //     @include WH(35px, 35px);
+    //     @extend %padding-1;
+    //     translate: -50% -50%;
+    //     background-color: $Black-90;
+    //     z-index: 100;
+    //     color: $White-80
+    // }
+}
+
+.main {
+    @include WH(100%, auto);
+    @include Flex(space-evenly, center, column);
+    @extend %margin-v-2;
+    background-color: $Grantie-Grey;
+}
+
+
+/* - Lenght Indicator Section - */
+
+.length-changer {
+    @include WH(100%, auto);
+    @include Flex(space-between, center, column);
+    @extend %padding-v-2;
+    &__indicator {
+        @include WH(85%, auto);
+        @include Flex(space-between, center, row);
+        @extend %padding-v-1;
+    }
+    &__title,
+    &__length {
+        color: $White-85;
+    }
+    &__title {
+        font-size: 1rem;
+        font-weight: $Weight-5;
+        letter-spacing: $L-Space-1;
+    }
+    &__length {
+        font-size: 1.5rem;
+        color: $Mint-Green;
+    }
+    // Input
+    &__input {
+        @include WH(100%, auto);
+        @extend %flex-center;
+        @extend %padding-v-2;
+        &__range {
+            -webkit-appearance: none;
+            /* Hides the slider so that custom slider can be made */
+            @include WH(85%, auto);
+            background: transparent;
+            background: linear-gradient(to right, $Mint-Green 0%, $Mint-Green 50%, $Black-90 50%, $Black-90 100%);
+            transition: background .5s ease-in;
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                @include WH(18px, 18px);
+                border-radius: 50%;
+                background-color: $White-100;
+                cursor: pointer;
+                margin-top: -7px;
+                transition: all .1s ease-in-out;
+                transition-property: border, background;
+                &:active {
+                    background-color: $Black-85;
+                    border: 1px solid $Mint-Green;
+                }
+            }
+            &::-webkit-slider-runnable-track {
+                @include WH(100%, 4px);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+/* - Include Section - */
+
+.validate-box {
+    @include WH(100%, auto);
+    @include Flex(space-between, flex-start, column);
+    @extend %padding-v-2;
+    &__condition {
+        @include WH(90%, auto);
+        @include Flex(flex-start, center, row);
+        @extend %margin-a-h;
+        @extend %padding-v-2;
+        &__checkbox {
+            @extend %margin-h-1;
+            @include WH(16px, 16px);
+            position: relative;
+            &::after {
+                content: '';
+                @include WH(15px, 15px);
+                visibility: visible;
+                border: 2px solid white;
+                border-radius: .1rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+                transition: all .1s ease-in;
+            }
+            &:hover::after {
+                background-color: $Black-90;
+                border: 2px solid $Black-95;
+            }
+            &:checked::after {
+                content: "";
+                @extend %flex-center;
+                background-color: $Mint-Green;
+                background-image: url(../assets/check-thick.svg);
+                border: 2px solid $Mint-Green;
+            }
+        }
+        &__message {
+            color: $White-85;
+            font-size: 1rem;
+            font-weight: $Weight-4;
+            word-spacing: $L-Space-3;
+            letter-spacing: $L-Space-2;
+            text-transform: capitalize;
+            @extend %padding-h-2;
+        }
+    }
+}
+
+
+/* - Strength Section - */
+
+.strength {
+    @include WH(90%, auto);
+    @include Flex(space-between, center, row);
+    @extend %padding-v-2;
+    @extend %padding-h-2;
+    background-color: rgba(0, 0, 0, 0.418);
+    &__message {
+        font-size: 1.1rem;
+        color: $White-85;
+        font-weight: $Weight-4;
+        letter-spacing: $L-Space-2;
+    }
+    &__bar__box {
+        @include WH(22%, 32px);
+        @include Flex(flex-end, center, row);
+    }
+    &__bar-message {
+        margin-left: 4.5rem;
+        color: $White-100;
+        font-weight: $Weight-3;
+        font-size: 1.2rem;
+        letter-spacing: $L-Space-2;
+    }
+    &__bar {
+        @include WH(10px, 40px);
+        margin-left: 8px;
+    }
+    // Green Bar
+    &__bar--green {
+        background-color: $green;
+    }
+    // Yellow Bar
+    &__bar--yellow {
+        background-color: $yellow;
+    }
+    // Orange Bar
+    &__bar--orange {
+        background-color: $orange;
+    }
+    // Red Bar
+    &__bar--red {
+        background-color: $red;
+    }
+    // Remove Background
+}
+
+.strength__bar--no-bg {
+    background: none;
+}
+
+
+/* - Generate Button - */
+
+.generate-btn {
+    @include WH(90%, auto);
+    @extend %padding-v-2;
+    @extend %padding-h-4;
+    @extend %margin-v-3;
+    @include Flex(center, center, row);
+    background-color: $Mint-Green;
+    color: $Chinese-Black;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.527);
+    transition: background .1s ease-in;
+    &:hover {
+        background-color: $White-90;
+        cursor: pointer;
+    }
+    &__message {
+        font-size: 1.2rem;
+        letter-spacing: $L-Space-3;
+        font-weight: $Weight-5;
+        @extend %margin-h-2;
+        transition: all .1s ease;
+    }
+    &__icon {
+        @include WH(13px, 13px);
+        transition: translate .1s ease-in;
+    }
+    &:hover &__icon {
+        translate: 50% 0;
+    }
+}
+
+
+/* - Alert Box - */
+
+.alert-box {
+    @include WH(clamp(300px, 350px, 450px), auto);
+    @include Flex(space-between, center, row);
+    @include Position-top-left(10%, 50%);
+    @extend %padding-2;
+    translate: -50% -80%;
+    border-radius: .2em;
+    background-color: $Mint-Green;
+    font: {
+        size: 1rem;
+        weight: $Weight-2;
+    }
+    letter-spacing: $L-Space-1;
+    color: $Black-80;
+    transition: all .2s ease-in;
+    &::after {
+        content: '';
+        @include WH(105%, 60%);
+        @include Position-top-left(0%, 0%);
+        translate: -1% -5%;
+        background-color: $Chinese-Black;
+        transition: all .3s ease-in;
+    }
+    &::before {
+        content: '';
+        @include WH(105%, 60%);
+        @include Position-top-left(50%, 0%);
+        translate: -1% 5%;
+        background-color: $Chinese-Black;
+        transition: all .3s ease-in;
+    }
+}
+
+.alert-box--reveal {
+    &::after {
+        content: '';
+        @include WH(105%, 50%);
+        @include Position-top-left(0%, 0%);
+        translate: -1% -100%;
+        background-color: $Chinese-Black;
+        transition: all .3s ease-in;
+    }
+    &::before {
+        content: '';
+        @include WH(105%, 50%);
+        @include Position-top-left(50%, 0);
+        translate: -1% 100%;
+        background-color: $Chinese-Black;
+        transition: all .3s ease-in;
+    }
+}
+
+
+/* - Media Queries - */
+
+@media (max-width:435px) {
+    html {
+        font-size: 14px;
+    }
+    body {
+        overflow: hidden;
+    }
+    .container {
+        overflow: hidden;
+        @include padding-h(16px);
+    }
+}
+
+@media (max-width:400px) {
+    .alert-box {
+        @include WH(300px, auto);
+        @include Flex(space-between, center, row);
+        @include Position-top-left(0, 50%);
+        translate: -50% -100%;
+        background-color: $Mint-Green;
+        box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.66);
+        transition: all .2s ease-in-out;
+        opacity: 0;
+        font: {
+            size: 1rem;
+            weight: $Weight-2;
+        }
+        letter-spacing: $L-Space-1;
+        color: $Black-80;
+        &::after {
+            content: none;
+        }
+        &::before {
+            content: none;
+        }
+    }
+    .alert-box--reveal {
+        translate: -50% 30%;
+        opacity: 1;
+    }
+}

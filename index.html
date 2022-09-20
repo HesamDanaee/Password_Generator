@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>Password Generator App</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Copy section -->
+        <div class="section copy-sec copy-sec--dark">
+            <h2 class="copy-sec__password">Empty</h2>
+            <img src="assets/copy-1.svg" class="copy-sec__icon" alt="" />
+        </div>
+
+        <!-- Body section -->
+        <div class="section main">
+            <!-- Password Length Indicator -->
+            <div class="length-changer">
+                <div class="length-changer__indicator">
+                    <h3 class="length-changer__title">Character Length</h3>
+                    <h2 class="length-changer__length">10</h2>
+                </div>
+                <div class="length-changer__input">
+                    <input type="range" min="0" max="20" value="10" class="length-changer__input__range" step="1" />
+                </div>
+            </div>
+
+            <!-- Condition Checker -->
+            <div class="validate-box">
+                <div class="validate-box__condition">
+                    <input type="checkbox" id="uppercase" class="validate-box__condition__checkbox" />
+                    <h3 class="validate-box__condition__message">
+                        Include Uppercase Letters
+                    </h3>
+                </div>
+
+                <div class="validate-box__condition">
+                    <input type="checkbox" id="lowercase" class="validate-box__condition__checkbox" />
+                    <h3 class="validate-box__condition__message">
+                        Include Lowercase Letters
+                    </h3>
+                </div>
+
+                <div class="validate-box__condition">
+                    <input type="checkbox" id="numbers" class="validate-box__condition__checkbox" />
+                    <h3 class="validate-box__condition__message">Include Numbers</h3>
+                </div>
+
+                <div class="validate-box__condition">
+                    <input type="checkbox" id="symbols" class="validate-box__condition__checkbox" />
+                    <h3 class="validate-box__condition__message">Include Symbols</h3>
+                </div>
+            </div>
+
+            <!-- Strengh Indicator Box -->
+            <div class="strength">
+                <h2 class="strength__message">STRENGTH</h2>
+                <h2 class="strength__bar-message">Generate</h2>
+                <div class="strength__bar__box">
+                    <span class="strength__bar strength__bar--green strength__bar--no-bg"></span>
+                    <span class="strength__bar strength__bar--yellow strength__bar--no-bg"></span>
+                    <span class="strength__bar strength__bar--orange strength__bar--no-bg"></span>
+                    <span class="strength__bar strength__bar--red strength__bar--no-bg"></span>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <div class="generate-btn">
+                <h2 class="generate-btn__message">GENERATE</h2>
+                <img src="assets/arrow.svg" class="generate-btn__icon" alt="" />
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Alert Box -->
+
+    <div class="alert-box">
+        <span class="alert-box__icon"></span>
+        <h3 class="alert-box__message"></h3>
+    </div>
+
+    <script src="Type/app.js" defer type="module"></script>
+</body>
+
+</html>
